@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:id="@+id/main">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_job"
+        android:id="@+id/btnNewJob"
+        android:layout_alignRight="@+id/btnEditRepair"
+        android:layout_alignEnd="@+id/btnEditRepair"
+        android:layout_alignLeft="@+id/btnEditRepair"
+        android:layout_alignStart="@+id/btnEditRepair"
+        android:onClick="createNewJob" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_repair"
+        android:id="@+id/btnCreateRepair"
+        android:layout_below="@+id/btnNewJob"
+        android:layout_alignRight="@+id/btnNewJob"
+        android:layout_alignEnd="@+id/btnNewJob"
+        android:layout_alignLeft="@+id/btnEditRepair"
+        android:layout_alignStart="@+id/btnEditRepair"
+        android:onClick="createRepair" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_repair"
+        android:id="@+id/btnEditRepair"
+        android:layout_below="@+id/btnCreateRepair"
+        android:layout_centerHorizontal="true"
+        android:onClick="editRepair" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_work"
+        android:id="@+id/btnUpload"
+        android:layout_below="@+id/btnEditRepair"
+        android:layout_alignRight="@+id/btnEditRepair"
+        android:layout_alignEnd="@+id/btnEditRepair"
+        android:layout_alignLeft="@+id/btnEditRepair"
+        android:layout_alignStart="@+id/btnEditRepair"
+        android:onClick="uploadWork" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_settings"
+        android:id="@+id/btnSettings"
+        android:layout_below="@+id/btnUpload"
+        android:layout_alignRight="@+id/btnUpload"
+        android:layout_alignEnd="@+id/btnUpload"
+        android:layout_alignLeft="@+id/btnEditRepair"
+        android:layout_alignStart="@+id/btnEditRepair"
+        android:onClick="appSettings" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/company_info"
+        android:id="@+id/btnInfo"
+        android:layout_below="@+id/btnSettings"
+        android:layout_alignRight="@+id/btnSettings"
+        android:layout_alignEnd="@+id/btnSettings"
+        android:layout_alignLeft="@+id/btnSettings"
+        android:layout_alignStart="@+id/btnSettings"
+        android:onClick="companyInfo" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:layout_below="@+id/btnInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:src="@drawable/ic_launcher"/>
+
+</RelativeLayout>
