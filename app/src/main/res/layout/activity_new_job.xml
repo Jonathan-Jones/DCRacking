@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/company_information_title"
+        android:id="@+id/new_job_title"
         android:textSize="20sp"
         android:gravity="center"
-        android:text="Company Information" />
+        android:text="@string/new_job" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,19 +20,18 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="75dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/company_name"
+            android:id="@+id/new_job_customer"
             android:text="@string/new_job_owner"
             android:layout_weight="0.23"/>
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/company_name_edit_text"
+            android:id="@+id/new_job_customer_edit_text"
             android:inputType="textPersonName"
-            android:width="250dp"
-            android:hint="Customer/Owner Name"/>
+            android:hint="@string/new_job_owner_hint"/>
 
     </LinearLayout>
 
@@ -43,21 +42,77 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="75dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/company_info_date"
+            android:id="@+id/new_job_date"
             android:text="@string/new_job_date"
             android:layout_weight="0.23"/>
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
-            android:id="@+id/company_info_date_edit_text"
-            android:layout_weight="0.23" />
-
+            android:id="@+id/new_job_date_edit_text"
+            android:layout_weight="0.23"
+            android:editable="false"
+            android:textIsSelectable="false"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_job_address"
+            android:text="@string/new_job_address"
+            android:layout_weight="0.23"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/new_job_address_edit_text"
+            android:layout_weight="0.23"
+            android:hint="@string/new_job_address_hint"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_job_job_number"
+            android:text="@string/new_job_job_number"
+            android:layout_weight="0.23"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/new_job_job_number_edit_text"
+            android:layout_weight="0.23"
+            android:hint="@string/new_job_job_number_hint"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Repair Items"
+        android:id="@+id/btnNewJob"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

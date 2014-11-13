@@ -12,15 +12,17 @@
     <string name="company_info">Company Info.</string>
 
     <!-- strings for New Job -->
-    <string name="new_job_owner">Customer/Owner Name: </string>
-    <string name="new_job_owner_hint">Customer/Owner Name </string>
+    <string name="new_job_owner">Customer: </string>
+    <string name="new_job_owner_hint">Customer/Owner Name</string>
     <string name="new_job_date">Date: </string>
-    <string name="new_job_address">Address/Facility: </string>
+    <string name="new_job_address">Address: </string>
+    <string name="new_job_address_hint">Address/Facility location</string>
     <string name="new_job_address_street">Street: </string>
     <string name="new_job_address_city">City: </string>
     <string name="new_job_address_province">Province: </string>
     <string name="new_job_address_postal_code">Postal Code: </string>
     <string name="new_job_address_country">Country: </string>
-    <string name="new_job_job_number">Job Number: </string>
+    <string name="new_job_job_number">Job#: </string>
+    <string name="new_job_job_number_hint">Job Number</string>
 
 </resources>
