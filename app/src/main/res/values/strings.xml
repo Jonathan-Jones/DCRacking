@@ -12,7 +12,8 @@
     <string name="company_info">Company Info.</string>
 
     <!-- strings for New Job -->
-    <string name="new_job_owner">Customer/Owner: </string>
+    <string name="new_job_owner">Customer/Owner Name: </string>
+    <string name="new_job_owner_hint">Customer/Owner Name </string>
     <string name="new_job_date">Date: </string>
     <string name="new_job_address">Address/Facility: </string>
     <string name="new_job_address_street">Street: </string>
