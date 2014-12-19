@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Jonathan on 10/17/2014.
+ * This class is used to create a new repair item to the list and database.
  */
 public class CreateRepairActivity extends Activity
 {
@@ -43,7 +43,7 @@ public class CreateRepairActivity extends Activity
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
-    private void dispatchTakePictureIntent() {
+    /*private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -62,7 +62,7 @@ public class CreateRepairActivity extends Activity
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -75,7 +75,7 @@ public class CreateRepairActivity extends Activity
         }
     }
 
-    private File createImageFile() throws IOException
+    /*private File createImageFile() throws IOException
     {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -83,17 +83,17 @@ public class CreateRepairActivity extends Activity
         File storageDir = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
+    /*            imageFileName,  /* prefix */
+    /*            ".jpg",         /* suffix */
+    /*            storageDir      /* directory */
+    /*    );
 
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
-    }
+    }*/
 
-    private void setPic() {
+    /*private void setPic() {
         // Get the dimensions of the View
         int targetW = mImageView.getWidth();
         int targetH = mImageView.getHeight();
@@ -115,5 +115,5 @@ public class CreateRepairActivity extends Activity
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
         mImageView.setImageBitmap(bitmap);
-    }
+    }*/
 }

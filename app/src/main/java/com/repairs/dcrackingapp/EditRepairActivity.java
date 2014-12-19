@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 /**
- * Created by Jonathan on 10/17/2014.
+ * This class is used to edit/remove repair items.
  */
 public class EditRepairActivity extends Activity
 {
@@ -23,10 +23,6 @@ public class EditRepairActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }

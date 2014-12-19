@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Jonathan on 10/6/2014.
+ * This class is used to add a new job.
  */
 public class NewJobActivity extends Activity
 {

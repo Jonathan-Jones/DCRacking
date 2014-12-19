@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Created by Jonathan on 12/19/2014.
+ * This class is used to add a new client to the list and database.
  */
 public class AddClientActivity extends Activity
 {

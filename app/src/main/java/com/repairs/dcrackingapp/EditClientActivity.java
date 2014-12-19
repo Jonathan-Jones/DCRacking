@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Created by Jonathan on 12/19/2014.
+ * This class is used to edit and/or remove a client from the list and database.
  */
 public class EditClientActivity extends Activity
 {
