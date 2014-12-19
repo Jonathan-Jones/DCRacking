@@ -55,8 +55,7 @@
             android:ems="10"
             android:id="@+id/new_job_date_edit_text"
             android:layout_weight="0.23"
-            android:editable="false"
-            android:textIsSelectable="false"/>
+            android:enabled="false"/>
 
     </LinearLayout>
 
@@ -113,6 +112,12 @@
         android:layout_height="wrap_content"
         android:text="Enter Repair Items"
         android:id="@+id/btnNewJob"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

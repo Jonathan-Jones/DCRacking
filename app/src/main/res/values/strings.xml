@@ -25,4 +25,25 @@
     <string name="new_job_job_number">Job#: </string>
     <string name="new_job_job_number_hint">Job Number</string>
 
+    <!-- strings for New Client -->
+    <string name="new_client">New Client</string>
+    <string name="new_client_add">Add Client</string>
+    <string name="new_client_edit">Edit Client</string>
+    <string name="new_client_remove">Delete Client</string>
+
+    <!-- strings for Company Info -->
+    <string name="company_info_text">DC Racking &amp; Maintenance specializes in making Distribution Centres safe and efficient operations.</string>
+    <string name="company_info_text2">We provide Rack Inspections and Engineered Certified Rack Repairs ISO 9001:2008 Certified</string>
+    <string name="company_info_mail">Mailing Address</string>
+    <string name="company_info_mail2">PO Box 29003 101 Holiday Inn Dr.</string>
+    <string name="company_info_mail3">Cambridge, On. N3C OE6</string>
+    <string name="company_info_shop">Shop Address</string>
+    <string name="company_info_shop2">DC Racking and Maintenance Inc.</string>
+    <string name="company_info_shop3">655 Industrial Rd. Unit 14</string>
+    <string name="company_info_shop4">Cambridge, On. N3H 5C9</string>
+    <string name="company_info_phone">General Information: info@dcracking.com</string>
+    <string name="company_info_phone2">Toll Free: 1-800-486-1535</string>
+    <string name="company_info_phone3">Phone: (519) 653-6003</string>
+    <string name="company_info_phone4">Fax: (519) 653-4893</string>
+
 </resources>
