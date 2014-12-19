@@ -20,12 +20,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewJobActivity"
-            android:label="@string/new_job"
+            android:name=".NewClientActivity"
+            android:label="@string/new_client"
             android:parentActivityName="com.repairs.dcrackingapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.repairs.dcrackingapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddClientActivity"
+            android:label="@string/new_client_add"
+            android:parentActivityName="com.repairs.dcrackingapp.NewClientActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.repairs.dcrackingapp.NewClientActivity" />
+        </activity>
+        <activity
+            android:name=".EditClientActivity"
+            android:label="@string/new_client"
+            android:parentActivityName="com.repairs.dcrackingapp.NewClientActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.repairs.dcrackingapp.NewClientActivity" />
         </activity>
         <activity
             android:name=".CreateRepairActivity"

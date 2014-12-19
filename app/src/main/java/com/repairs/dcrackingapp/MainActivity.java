@@ -32,17 +32,13 @@ public class MainActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings | super.onOptionsItemSelected(item);
     }
 
     /** Called when the user clicks the createNewJob button */
-    public void createNewJob(View view)
+    public void createNewClient(View view)
     {
-        Intent intent = new Intent(this, NewJobActivity.class);
+        Intent intent = new Intent(this, NewClientActivity.class);
         startActivity(intent);
     }
 

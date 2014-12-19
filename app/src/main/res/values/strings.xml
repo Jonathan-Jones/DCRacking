@@ -30,6 +30,7 @@
     <string name="new_client_add">Add Client</string>
     <string name="new_client_edit">Edit Client</string>
     <string name="new_client_remove">Delete Client</string>
+    <string name="client_update">Update Client Info.</string>
 
     <!-- strings for Company Info -->
     <string name="company_info_text">DC Racking &amp; Maintenance specializes in making Distribution Centres safe and efficient operations.</string>

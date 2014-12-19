@@ -28,19 +28,19 @@ public class DBTools  extends SQLiteOpenHelper
         // Make sure you don't put a ; at the end of the query
 
         String queryCreateClient = "CREATE TABLE CLIENT ( client_id INTEGER PRIMARY KEY autoincrement, client_name TEXT, " +
-        "address TEXT, job_number TEXT, date_created DATE, user_created TEXT)";
+        "date_created DATE, client_address TEXT, client_number TEXT, user_created TEXT)";
 
-        String queryCreateItem = "CREATE TABLE ITEM ( item_id INTEGER PRIMARY KEY autoincrement, client_id INTEGER, " +
+        /*String queryCreateItem = "CREATE TABLE ITEM ( item_id INTEGER PRIMARY KEY autoincrement, client_id INTEGER, " +
                 "before_image_1 TEXT, before_image_2 TEXT, repair_id TEXT, inspection_id TEXT, " +
                 "slot_location TEXT, interim_image_1 TEXT, interim_image_2 TEXT, repair_category TEXT, " +
                 "sub_category TEXT, after_image_1 TEXT, after_image_2 TEXT, customization TEXT, " +
-                "date_created DATE)";
+                "date_created DATE)";*/
 
         // Executes the query provided as long as the query isn't a select
         // or if the query doesn't return any data
 
         database.execSQL(queryCreateClient);
-        database.execSQL(queryCreateItem);
+        /*database.execSQL(queryCreateItem);*/
     }
 
     // onUpgrade is used to drop tables, add tables, or do anything
@@ -72,10 +72,10 @@ public class DBTools  extends SQLiteOpenHelper
         ContentValues values = new ContentValues();
 
         values.put("client_name", queryValues.get("client_name"));
-        values.put("address", queryValues.get("address"));
-        values.put("job_number", queryValues.get("job_number"));
         values.put("date_created", queryValues.get("date_created"));
-        values.put("user_created", queryValues.get("user_created"));
+        values.put("client_address", queryValues.get("client_address"));
+        values.put("client_number", queryValues.get("client_number"));
+        values.put("user_created", "dcrackingapp");
 
         // Inserts the data in the form of ContentValues into the
         // table name provided
@@ -98,25 +98,25 @@ public class DBTools  extends SQLiteOpenHelper
         ContentValues values = new ContentValues();
 
         values.put("client_name", queryValues.get("client_name"));
-        values.put("address", queryValues.get("address"));
-        values.put("job_number", queryValues.get("job_number"));
         values.put("date_created", queryValues.get("date_created"));
-        values.put("user_created", queryValues.get("user_created"));
+        values.put("client_address", queryValues.get("client_address"));
+        values.put("client_number", queryValues.get("client_number"));
+        values.put("user_created", "dcrackingapp");
 
         // update(TableName, ContentValueForTable, WhereClause, ArgumentForWhereClause)
 
-        return database.update("CLIENT", values, "client_id" + " = ?", new String[] { queryValues.get("client_id") });
+        return database.update("CLIENT", values, "client_id= ?", new String[] { queryValues.get("client_id") });
     }
 
     // Used to delete a contact with the matching contactId
 
-    public void deleteClient(String id)
+    public void deleteClient(String client_id)
     {
         // Open a database for reading and writing
 
         SQLiteDatabase database = this.getWritableDatabase();
 
-        String deleteQuery = "DELETE FROM CLIENT where client_id='" + id + "'";
+        String deleteQuery = "DELETE FROM CLIENT where client_id='" + client_id + "'";
 
         // Executes the query provided as long as the query isn't a select
         // or if the query doesn't return any data
@@ -133,7 +133,7 @@ public class DBTools  extends SQLiteOpenHelper
 
         clientArrayList = new ArrayList<HashMap<String, String>>();
 
-        String selectQuery = "SELECT * FROM CLIENTS";
+        String selectQuery = "SELECT * FROM CLIENT";
 
         // Open a database for reading and writing
 
@@ -160,9 +160,9 @@ public class DBTools  extends SQLiteOpenHelper
 
                 contactMap.put("client_id", cursor.getString(0));
                 contactMap.put("client_name", cursor.getString(1));
-                contactMap.put("address", cursor.getString(2));
-                contactMap.put("job_number", cursor.getString(3));
-                contactMap.put("date_created", cursor.getString(4));
+                contactMap.put("date_created", cursor.getString(2));
+                contactMap.put("client_address", cursor.getString(3));
+                contactMap.put("client_number", cursor.getString(4));
                 contactMap.put("user_created", cursor.getString(5));
 
                 clientArrayList.add(contactMap);
@@ -174,7 +174,7 @@ public class DBTools  extends SQLiteOpenHelper
         return clientArrayList;
     }
 
-    public HashMap<String, String> getClientInfo(String id)
+    public HashMap<String, String> getClientInfo(String client_id)
     {
         HashMap<String, String> clientMap = new HashMap<String, String>();
 
@@ -182,7 +182,7 @@ public class DBTools  extends SQLiteOpenHelper
 
         SQLiteDatabase database = this.getReadableDatabase();
 
-        String selectQuery = "SELECT * FROM CLIENT where client_id='" + id + "'";
+        String selectQuery = "SELECT * FROM CLIENT where client_id='" + client_id + "'";
 
         // rawQuery executes the query and returns the result as a Cursor
 
@@ -193,9 +193,9 @@ public class DBTools  extends SQLiteOpenHelper
             {
                 clientMap.put("client_id", cursor.getString(0));
                 clientMap.put("client_name", cursor.getString(1));
-                clientMap.put("address", cursor.getString(2));
-                clientMap.put("job_number", cursor.getString(3));
-                clientMap.put("date_created", cursor.getString(4));
+                clientMap.put("date_created", cursor.getString(2));
+                clientMap.put("client_address", cursor.getString(3));
+                clientMap.put("client_number", cursor.getString(4));
                 clientMap.put("user_created", cursor.getString(5));
             }
             while (cursor.moveToNext());

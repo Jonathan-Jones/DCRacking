@@ -15,10 +15,10 @@ import java.util.HashMap;
  */
 public class AddClientActivity extends Activity
 {
-    EditText clientName;
-    EditText date;
-    EditText address;
-    EditText clientNumber;
+    EditText client_name;
+    EditText date_created;
+    EditText client_address;
+    EditText client_number;
 
     DBTools dbTools = new DBTools(this);
 
@@ -27,22 +27,22 @@ public class AddClientActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_client);
 
-        clientName = (EditText) findViewById( R.id.clientName );
-        date = (EditText) findViewById( R.id.date );
+        client_name = (EditText) findViewById( R.id.client_name );
+        date_created = (EditText) findViewById( R.id.date_created );
             SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
-            date.setText(sdf.format(new Date()));
-        address = (EditText) findViewById( R.id.address );
-        clientNumber = (EditText) findViewById( R.id.clientNumber );
+            date_created.setText(sdf.format(new Date()));
+        client_address = (EditText) findViewById( R.id.client_address );
+        client_number = (EditText) findViewById( R.id.client_number );
     }
 
     public void addNewClient(View view)
     {
         HashMap<String, String> queryValuesMap = new HashMap<String, String>();
 
-        queryValuesMap.put("clientName", clientName.getText().toString());
-        queryValuesMap.put("date", date.getText().toString());
-        queryValuesMap.put("address", address.getText().toString());
-        queryValuesMap.put("clientNumber", clientNumber.getText().toString());
+        queryValuesMap.put("client_name", client_name.getText().toString());
+        queryValuesMap.put("date_created", date_created.getText().toString());
+        queryValuesMap.put("client_address", client_address.getText().toString());
+        queryValuesMap.put("client_number", client_number.getText().toString());
 
         dbTools.insertClient(queryValuesMap);
 

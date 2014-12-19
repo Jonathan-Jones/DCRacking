@@ -13,10 +13,10 @@ import java.util.HashMap;
  */
 public class EditClientActivity extends Activity
 {
-    EditText clientName;
-    EditText date;
-    EditText address;
-    EditText clientNumber;
+    EditText client_name;
+    EditText date_created;
+    EditText client_address;
+    EditText client_number;
 
     DBTools dbTools = new DBTools(this);
 
@@ -25,23 +25,22 @@ public class EditClientActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_client);
 
-        clientName = (EditText) findViewById( R.id.clientName );
-        date = (EditText) findViewById( R.id.date );
-        address = (EditText) findViewById( R.id.address );
-        clientNumber = (EditText) findViewById( R.id.clientNumber );
+        client_name = (EditText) findViewById( R.id.client_name );
+        date_created = (EditText) findViewById( R.id.date_created );
+        client_address = (EditText) findViewById( R.id.client_address );
+        client_number = (EditText) findViewById( R.id.client_number );
 
         Intent theIntent = getIntent();
-
-        String clientId = theIntent.getStringExtra("clientId");
+        String clientId = theIntent.getStringExtra("client_id");
 
         HashMap<String, String> clientList = dbTools.getClientInfo(clientId);
 
         if(clientList.size() != 0)
         {
-            clientName.setText(clientList.get("clientName"));
-            date.setText(clientList.get("date"));
-            address.setText(clientList.get("address"));
-            clientNumber.setText(clientList.get("clientNumber"));
+            client_name.setText(clientList.get("client_name"));
+            date_created.setText(clientList.get("date_created"));
+            client_address.setText(clientList.get("client_address"));
+            client_number.setText(clientList.get("client_number"));
         }
     }
 
@@ -49,20 +48,20 @@ public class EditClientActivity extends Activity
     {
         HashMap<String, String> queryValuesMap = new HashMap<String, String>();
 
-        clientName.setText(queryValuesMap.get("clientName"));
-        date.setText(queryValuesMap.get("date"));
-        address.setText(queryValuesMap.get("address"));
-        clientNumber.setText(queryValuesMap.get("clientNumber"));
+        client_name = (EditText) findViewById( R.id.client_name );
+        date_created = (EditText) findViewById( R.id.date_created );
+        client_address = (EditText) findViewById( R.id.client_address );
+        client_number = (EditText) findViewById( R.id.client_number );
 
         Intent theIntent = getIntent();
+        String client_id = theIntent.getStringExtra("client_id");
 
-        String clientId = theIntent.getStringExtra("clientId");
-
-        queryValuesMap.put("clientId", clientId);
-        queryValuesMap.put("clientName", clientName.getText().toString());
-        queryValuesMap.put("date", date.getText().toString());
-        queryValuesMap.put("address", address.getText().toString());
-        queryValuesMap.put("clientNumber", clientNumber.getText().toString());
+        queryValuesMap.put("client_id", client_id);
+        queryValuesMap.put("client_name", client_name.getText().toString());
+        queryValuesMap.put("date_created", date_created.getText().toString());
+        queryValuesMap.put("client_address", client_address.getText().toString());
+        queryValuesMap.put("client_number", client_number.getText().toString());
+        queryValuesMap.put("user_created", "dcrackingapp");
 
         dbTools.updateClient(queryValuesMap);
 
@@ -72,10 +71,9 @@ public class EditClientActivity extends Activity
     public void removeClient(View view)
     {
         Intent theIntent = getIntent();
+        String client_id = theIntent.getStringExtra("client_id");
 
-        String clientId = theIntent.getStringExtra("clientId");
-
-        dbTools.deleteClient(clientId);
+        dbTools.deleteClient(client_id);
 
         this.callNewClientActivity(view);
     }

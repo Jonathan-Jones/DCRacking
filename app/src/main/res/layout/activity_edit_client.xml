@@ -34,7 +34,7 @@
             android:padding="5dp"/>
 
         <EditText
-            android:id="@+id/clientName"
+            android:id="@+id/client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,11 +61,12 @@
             android:padding="5dp"/>
 
         <EditText
-            android:id="@+id/date"
+            android:id="@+id/date_created"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
+            android:enabled="false"
             android:ems="10"
             android:inputType="date">
 
@@ -88,7 +89,7 @@
             android:padding="5dp"/>
 
         <EditText
-            android:id="@+id/address"
+            android:id="@+id/client_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -115,7 +116,7 @@
             android:padding="5dp"/>
 
         <EditText
-            android:id="@+id/clientNumber"
+            android:id="@+id/client_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -137,7 +138,7 @@
             android:id="@+id/editButton"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:text="@string/new_client_edit"
+            android:text="@string/client_update"
             android:onClick="editClient"
             android:layout_weight="1"/>
 

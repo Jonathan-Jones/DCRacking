@@ -18,7 +18,7 @@ import java.util.HashMap;
  */
 public class NewClientActivity extends ListActivity
 {
-    TextView clientId;
+    TextView client_id;
 
     DBTools dbTools = new DBTools(this);
 
@@ -36,13 +36,13 @@ public class NewClientActivity extends ListActivity
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
                 {
-                    clientId = (TextView) view.findViewById(R.id.clientId);
+                    client_id = (TextView) view.findViewById(R.id.client_id);
 
-                    String clientIdValue = clientId.getText().toString();
+                    String clientIdValue = client_id.getText().toString();
 
                     Intent theIntent = new Intent(getApplication(), EditClientActivity.class);
 
-                    theIntent.putExtra("clientId", clientIdValue);
+                    theIntent.putExtra("client_id", clientIdValue);
 
                     startActivity(theIntent);
                 }
@@ -50,8 +50,8 @@ public class NewClientActivity extends ListActivity
 
             ListAdapter adapter = new SimpleAdapter(
                     NewClientActivity.this, clientList, R.layout.activity_client_entry,
-                    new String[] {"clientId", "clientName", "clientNumber"},
-                    new int[] {R.id.clientId, R.id.clientName, R.id.clientNumber});
+                    new String[] {"client_id", "client_name", "client_number"},
+                    new int[] {R.id.client_id, R.id.client_name, R.id.client_number});
 
             setListAdapter(adapter);
         }

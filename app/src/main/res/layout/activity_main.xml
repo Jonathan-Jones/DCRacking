@@ -14,13 +14,13 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_job"
+        android:text="@string/new_client"
         android:id="@+id/btnNewJob"
         android:layout_alignRight="@+id/btnEditRepair"
         android:layout_alignEnd="@+id/btnEditRepair"
         android:layout_alignLeft="@+id/btnEditRepair"
         android:layout_alignStart="@+id/btnEditRepair"
-        android:onClick="createNewJob" />
+        android:onClick="createNewClient" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
