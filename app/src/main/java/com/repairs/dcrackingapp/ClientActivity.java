@@ -16,7 +16,7 @@ import java.util.HashMap;
 /**
  * This class is used to add a new client to the list and database.
  */
-public class NewClientActivity extends ListActivity
+public class ClientActivity extends ListActivity
 {
     TextView client_id;
 
@@ -25,7 +25,7 @@ public class NewClientActivity extends ListActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_client);
+        setContentView(R.layout.activity_client);
         ArrayList<HashMap<String, String>> clientList = dbTools.getAllClients();
 
         if(clientList.size() != 0)
@@ -49,7 +49,7 @@ public class NewClientActivity extends ListActivity
             });
 
             ListAdapter adapter = new SimpleAdapter(
-                    NewClientActivity.this, clientList, R.layout.activity_client_entry,
+                    ClientActivity.this, clientList, R.layout.activity_client_entry,
                     new String[] {"client_id", "client_name", "client_number"},
                     new int[] {R.id.client_id, R.id.client_name, R.id.client_number});
 

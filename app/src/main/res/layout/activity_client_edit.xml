@@ -10,10 +10,10 @@
         android:background="#000">
 
         <TextView
-            android:id="@+id/addClientTextView"
+            android:id="@+id/editClientTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_client_add"
+            android:text="@string/client_edit"
             android:padding="5dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFF"/>
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
+            android:enabled="false"
             android:ems="10"
-            android:inputType="date"
-            android:enabled="false">
+            android:inputType="date">
 
             <requestFocus />
         </EditText>
@@ -121,8 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
-            android:ems="10"
-            android:inputType="text">
+            android:ems="10">
 
             <requestFocus />
         </EditText>
@@ -135,11 +134,19 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/editButton"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:text="@string/new_client_add"
-            android:onClick="addNewClient"
+            android:text="@string/client_update"
+            android:onClick="editClient"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/client_remove"
+            android:onClick="removeClient"
             android:layout_weight="1"/>
 
     </TableRow>

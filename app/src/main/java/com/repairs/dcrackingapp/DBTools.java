@@ -9,11 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 // SQLiteOpenHelper helps you open or create a database
-
 public class DBTools  extends SQLiteOpenHelper
 {
     // Context : provides access to application-specific resources and classes
-
     public DBTools(Context applicationContext)
     {
         // Call use the database or to create it
@@ -54,152 +52,176 @@ public class DBTools  extends SQLiteOpenHelper
 
         // Executes the query provided as long as the query isn't a select
         // or if the query doesn't return any data
-
         database.execSQL(query);
         this.onCreate(database);
     }
 
     public void insertClient(HashMap<String, String> queryValues)
     {
-        // Open a database for reading and writing
+        try
+        {
+            // Open a database for reading and writing
+            SQLiteDatabase database = this.getWritableDatabase();
 
-        SQLiteDatabase database = this.getWritableDatabase();
+            // Stores key value pairs being the column name and the data
+            // ContentValues data type is needed because the database
+            // requires its data type to be passed
+            ContentValues values = new ContentValues();
 
-        // Stores key value pairs being the column name and the data
-        // ContentValues data type is needed because the database
-        // requires its data type to be passed
+            values.put("client_name", queryValues.get("client_name"));
+            values.put("date_created", queryValues.get("date_created"));
+            values.put("client_address", queryValues.get("client_address"));
+            values.put("client_number", queryValues.get("client_number"));
+            values.put("user_created", "dcrackingapp");
 
-        ContentValues values = new ContentValues();
+            // Inserts the data in the form of ContentValues into the
+            // table name provided
+            database.insert("CLIENT", null, values);
 
-        values.put("client_name", queryValues.get("client_name"));
-        values.put("date_created", queryValues.get("date_created"));
-        values.put("client_address", queryValues.get("client_address"));
-        values.put("client_number", queryValues.get("client_number"));
-        values.put("user_created", "dcrackingapp");
+            // Release the reference to the SQLiteDatabase object
 
-        // Inserts the data in the form of ContentValues into the
-        // table name provided
-
-        database.insert("CLIENT", null, values);
-
-        // Release the reference to the SQLiteDatabase object
-
-        database.close();
-    }
+            database.close();
+        } // end try
+        catch(Exception ex)
+        {
+            ex.getMessage();
+        } // end catch()
+    } // end insertClient()
 
     public int updateClient(HashMap<String, String> queryValues)
     {
-        // Open a database for reading and writing
+        try
+        {
+            // Open a database for reading and writing
+            SQLiteDatabase database = this.getWritableDatabase();
 
-        SQLiteDatabase database = this.getWritableDatabase();
+            // Stores key value pairs being the column name and the data
+            ContentValues values = new ContentValues();
 
-        // Stores key value pairs being the column name and the data
-
-        ContentValues values = new ContentValues();
-
-        values.put("client_name", queryValues.get("client_name"));
-        values.put("date_created", queryValues.get("date_created"));
-        values.put("client_address", queryValues.get("client_address"));
-        values.put("client_number", queryValues.get("client_number"));
-        values.put("user_created", "dcrackingapp");
-
-        // update(TableName, ContentValueForTable, WhereClause, ArgumentForWhereClause)
-
-        return database.update("CLIENT", values, "client_id= ?", new String[] { queryValues.get("client_id") });
-    }
+            values.put("client_name", queryValues.get("client_name"));
+            values.put("date_created", queryValues.get("date_created"));
+            values.put("client_address", queryValues.get("client_address"));
+            values.put("client_number", queryValues.get("client_number"));
+            values.put("user_created", "dcrackingapp");
+            // update(TableName, ContentValueForTable, WhereClause, ArgumentForWhereClause)
+            return database.update("CLIENT", values, "client_id= ?", new String[]{queryValues.get("client_id")});
+        } // end try
+        catch (Exception ex)
+        {
+            ex.getMessage();
+            return 0;
+        } // end catch()
+    } // end updateClient()
 
     // Used to delete a contact with the matching contactId
-
     public void deleteClient(String client_id)
     {
-        // Open a database for reading and writing
+        try
+        {
+            // Open a database for reading and writing
+            SQLiteDatabase database = this.getWritableDatabase();
 
-        SQLiteDatabase database = this.getWritableDatabase();
+            String deleteQuery = "DELETE FROM CLIENT where client_id='" + client_id + "'";
 
-        String deleteQuery = "DELETE FROM CLIENT where client_id='" + client_id + "'";
-
-        // Executes the query provided as long as the query isn't a select
-        // or if the query doesn't return any data
-
-        database.execSQL(deleteQuery);
-    }
+            // Executes the query provided as long as the query isn't a select
+            // or if the query doesn't return any data
+            database.execSQL(deleteQuery);
+        } // end try
+        catch (Exception ex)
+        {
+            ex.getMessage();
+        } // end catch()
+    } // end deleteClient()
 
     public ArrayList<HashMap<String, String>> getAllClients()
     {
         // ArrayList that contains every row in the database
         // and each row key / value stored in a HashMap
-
         ArrayList<HashMap<String, String>> clientArrayList;
-
         clientArrayList = new ArrayList<HashMap<String, String>>();
 
-        String selectQuery = "SELECT * FROM CLIENT";
-
-        // Open a database for reading and writing
-
-        SQLiteDatabase database = this.getWritableDatabase();
-
-        // Cursor provides read and write access for the
-        // data returned from a database query
-
-        // rawQuery executes the query and returns the result as a Cursor
-
-        Cursor cursor = database.rawQuery(selectQuery, null);
-
-        // Move to the first row
-
-        if (cursor.moveToFirst())
+        try
         {
-            do
+            // Open a database for reading and writing
+            SQLiteDatabase database = this.getWritableDatabase();
+
+            String selectQuery = "SELECT * FROM CLIENT";
+
+            // Cursor provides read and write access for the
+            // data returned from a database query
+
+            // rawQuery executes the query and returns the result as a Cursor
+            Cursor cursor = database.rawQuery(selectQuery, null);
+
+            // Move to the first row
+            if (cursor.moveToFirst())
             {
-                HashMap<String, String> contactMap = new HashMap<String, String>();
+                do
+                {
+                    HashMap<String, String> contactMap = new HashMap<String, String>();
 
-                // Store the key / value pairs in a HashMap
-                // Access the Cursor data by index that is in the same order
-                // as used when creating the table
+                    // Store the key / value pairs in a HashMap
+                    // Access the Cursor data by index that is in the same order
+                    // as used when creating the table
 
-                contactMap.put("client_id", cursor.getString(0));
-                contactMap.put("client_name", cursor.getString(1));
-                contactMap.put("date_created", cursor.getString(2));
-                contactMap.put("client_address", cursor.getString(3));
-                contactMap.put("client_number", cursor.getString(4));
-                contactMap.put("user_created", cursor.getString(5));
+                    contactMap.put("client_id", cursor.getString(0));
+                    contactMap.put("client_name", cursor.getString(1));
+                    contactMap.put("date_created", cursor.getString(2));
+                    contactMap.put("client_address", cursor.getString(3));
+                    contactMap.put("client_number", cursor.getString(4));
+                    contactMap.put("user_created", cursor.getString(5));
 
-                clientArrayList.add(contactMap);
-            }
-            while (cursor.moveToNext()); // Move Cursor to the next row
-        }
+                    clientArrayList.add(contactMap);
+                } // end do
+                while (cursor.moveToNext()); // Move Cursor to the next row
+            } // end if()
 
-        // return contact list
+            if (!cursor.isClosed()) cursor.close();
+        } // end try
+        catch (Exception ex)
+        {
+            ex.getMessage();
+        } // end catch()
+
+        // return client list
         return clientArrayList;
-    }
+    } // end getAllClients()
 
     public HashMap<String, String> getClientInfo(String client_id)
     {
         HashMap<String, String> clientMap = new HashMap<String, String>();
 
-        // Open a database for reading only
-
-        SQLiteDatabase database = this.getReadableDatabase();
-
-        String selectQuery = "SELECT * FROM CLIENT where client_id='" + client_id + "'";
-
-        // rawQuery executes the query and returns the result as a Cursor
-
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst())
+        try
         {
-            do
+            // Open a database for reading only
+            SQLiteDatabase database = this.getReadableDatabase();
+
+            String selectQuery = "SELECT * FROM CLIENT where client_id='" + client_id + "'";
+
+            // rawQuery executes the query and returns the result as a Cursor
+            Cursor cursor = database.rawQuery(selectQuery, null);
+            if (cursor.moveToFirst())
             {
-                clientMap.put("client_id", cursor.getString(0));
-                clientMap.put("client_name", cursor.getString(1));
-                clientMap.put("date_created", cursor.getString(2));
-                clientMap.put("client_address", cursor.getString(3));
-                clientMap.put("client_number", cursor.getString(4));
-                clientMap.put("user_created", cursor.getString(5));
-            }
-            while (cursor.moveToNext());
-        }
+                do
+                {
+                    clientMap.put("client_id", cursor.getString(0));
+                    clientMap.put("client_name", cursor.getString(1));
+                    clientMap.put("date_created", cursor.getString(2));
+                    clientMap.put("client_address", cursor.getString(3));
+                    clientMap.put("client_number", cursor.getString(4));
+                    clientMap.put("user_created", cursor.getString(5));
+                } // end do
+                while (cursor.moveToNext());
+            } // end if()
+
+            if(!cursor.isClosed()) cursor.close();
+        } // end try
+        catch (Exception ex)
+        {
+            ex.getMessage();
+        } // end catch()
+
+        // return client info
         return clientMap;
-    }
+    } // end getClientInfo()
 }

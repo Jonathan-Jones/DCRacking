@@ -13,7 +13,7 @@ public class EditRepairActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_repair);
+        setContentView(R.layout.activity_item_edit);
     }
 
     @Override

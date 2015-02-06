@@ -3,18 +3,10 @@ package com.repairs.dcrackingapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * This class is used to create a new repair item to the list and database.
@@ -30,7 +22,7 @@ public class CreateRepairActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_repair);
+        setContentView(R.layout.activity_item);
     }
 
     @Override
@@ -73,6 +65,13 @@ public class CreateRepairActivity extends Activity
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageView.setImageBitmap(imageBitmap);
         }
+    }
+
+    public void showAddClient(View view)
+    {
+        Intent theIntent = new Intent(getApplication(), AddClientActivity.class);
+
+        startActivity(theIntent);
     }
 
     /*private File createImageFile() throws IOException

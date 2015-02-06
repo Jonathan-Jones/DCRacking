@@ -14,13 +14,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="@string/new_client"
+            android:text="@string/jobs"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFF"
             android:layout_weight="1"/>
 
         <Button
-            android:text="@string/new_client_add"
+            android:text="@string/client_add"
             android:id="@+id/add_new_client"
             android:background="#444444"
             android:onClick="showAddClient"

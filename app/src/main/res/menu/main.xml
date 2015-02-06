@@ -2,7 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity" >
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+          android:title="@string/action_settings"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+    <item android:id="@+id/action_company_info"
+          android:title="@string/action_company_info"
+          android:orderInCategory="200"
+          android:showAsAction="never"/>
+    <item android:id="@+id/action_upload_work"
+          android:title="@string/action_upload_work"
+          android:orderInCategory="300"
+          android:showAsAction="never"/>
 </menu>

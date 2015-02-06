@@ -25,7 +25,7 @@ public class AddClientActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_new_client);
+        setContentView(R.layout.activity_client_add);
 
         client_name = (EditText) findViewById( R.id.client_name );
         date_created = (EditText) findViewById( R.id.date_created );
@@ -51,7 +51,7 @@ public class AddClientActivity extends Activity
 
     public void callNewClientActivity(View view)
     {
-        Intent theIntent = new Intent(getApplication(), NewClientActivity.class);
+        Intent theIntent = new Intent(getApplication(), ClientActivity.class);
 
         startActivity(theIntent);
     }

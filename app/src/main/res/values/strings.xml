@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- strings for Action Menu -->
+    <string name="action_settings">Settings</string>
+    <string name="action_company_info">Company Info.</string>
+    <string name="action_upload_work">Upload Work</string>
+
     <!-- strings for Main -->
     <string name="app_name">DCRackingApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="settings">Settings</string>
     <string name="new_job">New Job</string>
     <string name="create_repair">Create Repair</string>
     <string name="edit_repair">View/Edit Repair(s)</string>
@@ -25,12 +30,21 @@
     <string name="new_job_job_number">Job#: </string>
     <string name="new_job_job_number_hint">Job Number</string>
 
-    <!-- strings for New Client -->
-    <string name="new_client">New Client</string>
-    <string name="new_client_add">Add Client</string>
-    <string name="new_client_edit">Edit Client</string>
-    <string name="new_client_remove">Delete Client</string>
+    <!-- strings for Client -->
+    <string name="client">New Client</string>
+    <string name="client_add">Add Client</string>
+    <string name="client_edit">Edit Client</string>
+    <string name="client_remove">Delete Client</string>
     <string name="client_update">Update Client Info.</string>
+    <string name="jobs">Current Jobs</string>
+
+    <!-- strings for Item -->
+    <string name="item">New Repair</string>
+    <string name="item_add">Add Repair</string>
+    <string name="item_edit">Edit Repair</string>
+    <string name="item_remove">Delete Repair</string>
+    <string name="item_update">Update Repair Info.</string>
+    <string name="items">Current Repairs</string>
 
     <!-- strings for Company Info -->
     <string name="company_info_text">DC Racking &amp; Maintenance specializes in making Distribution Centres safe and efficient operations.</string>
@@ -43,8 +57,8 @@
     <string name="company_info_shop3">655 Industrial Rd. Unit 14</string>
     <string name="company_info_shop4">Cambridge, On. N3H 5C9</string>
     <string name="company_info_phone">General Information: info@dcracking.com</string>
-    <string name="company_info_phone2">Toll Free: 1-800-486-1535</string>
-    <string name="company_info_phone3">Phone: (519) 653-6003</string>
-    <string name="company_info_phone4">Fax: (519) 653-4893</string>
+    <string name="company_info_phone2">Toll Free: 1&#8211;800&#8211;486&#8211;1535</string>
+    <string name="company_info_phone3">Phone: (519) 653&#8211;6003</string>
+    <string name="company_info_phone4">Fax: (519) 653&#8211;4893</string>
 
 </resources>

@@ -38,7 +38,7 @@ public class MainActivity extends Activity
     /** Called when the user clicks the createNewJob button */
     public void createNewClient(View view)
     {
-        Intent intent = new Intent(this, NewClientActivity.class);
+        Intent intent = new Intent(this, ClientActivity.class);
         startActivity(intent);
     }
 
